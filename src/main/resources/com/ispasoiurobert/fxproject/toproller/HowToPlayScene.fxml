@@ -19,12 +19,12 @@
          <effect>
             <Glow level="0.52" />
          </effect></Label>
-      <Text fx:id="howToPlayText" fill="#ffff11" layoutX="168.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a two-player dice game. Each player takes turns rolling two dice only once. After both players have rolled, their dice values are added together. The player with the higher total wins the game.If both players get the same total, they each roll the dice again, and this process repeats until one player wins.Good luck and may the best roll win!" textAlignment="CENTER" wrappingWidth="800.0">
+      <Text fx:id="howToPlayText" fill="#ffff11" layoutX="168.0" layoutY="244.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is a two-player dice game. Each player takes turns rolling two dice only once. After both players have rolled, their dice values are added together. The player with the higher total wins the game.If both players get the same total, they each roll the dice again, and this process repeats until one player wins.Good luck and may the best roll win!" textAlignment="CENTER" wrappingWidth="800.0">
          <font>
             <Font name="Consolas Bold" size="26.0" />
          </font>
       </Text>
-      <Button fx:id="okButton" layoutX="484.0" layoutY="528.0" mnemonicParsing="false" onAction="#clickOkButton" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #35b61c;" text="OK" textFill="#ffff11">
+      <Button fx:id="okButton" layoutX="484.0" layoutY="528.0" mnemonicParsing="false" onAction="#clickOkButton" opacity="0.0" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #35b61c;" text="OK" textFill="#ffff11">
          <font>
             <Font name="Consolas Bold" size="19.0" />
          </font>
