@@ -13,10 +13,12 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
         stage.setResizable(false);
+        stage.setHeight(630);
+        stage.setWidth(1134);
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("MainScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("TopRoller");
         stage.setScene(scene);
         stage.show();
     }

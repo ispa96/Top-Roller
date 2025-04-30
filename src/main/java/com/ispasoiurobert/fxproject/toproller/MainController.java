@@ -84,4 +84,8 @@ public class MainController {
             });
         });
     }
+
+    public void clickHowToPlayButton(ActionEvent event) {
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/HowToPlayScene.fxml", null, null);
+    }
 }
