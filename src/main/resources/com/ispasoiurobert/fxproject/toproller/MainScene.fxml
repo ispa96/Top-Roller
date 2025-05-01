@@ -6,6 +6,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1134.0" style="-fx-background-color: #35b61c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ispasoiurobert.fxproject.toproller.MainController">
@@ -23,7 +24,7 @@
             <Font name="Consolas Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="howToPlayButton" disable="true" layoutX="205.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickHowToPlayButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="How to Play">
+      <Button fx:id="howToPlayButton" disable="true" layoutX="205.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickHowToPlayButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="How to Play" textFill="WHITE">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
@@ -31,10 +32,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow />
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color></DropShadow>
          </effect>
       </Button>
-      <Button fx:id="startGameButton" disable="true" layoutX="510.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Start Game">
+      <Button fx:id="startGameButton" disable="true" layoutX="510.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickStartGameButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="Start Game" textFill="WHITE">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
@@ -42,10 +46,13 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow />
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color></DropShadow>
          </effect>
       </Button>
-      <Button fx:id="settingsButton" disable="true" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings">
+      <Button fx:id="settingsButton" disable="true" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings" textFill="WHITE">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
@@ -53,7 +60,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow />
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color></DropShadow>
          </effect>
       </Button>
    </children>
