@@ -54,6 +54,10 @@ public class MainController {
 
                 @Override
                 public void handle(ActionEvent actionEvent) {
+                    howToPlayButton.setDisable(false);
+                    startGameButton.setDisable(false);
+                    settingsButton.setDisable(false);
+
                     FadeTransition fadeTransition = new FadeTransition();
                     fadeTransition.setNode(howToPlayButton);
                     fadeTransition.setDuration(Duration.seconds(1));

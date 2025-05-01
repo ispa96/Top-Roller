@@ -45,6 +45,8 @@ public class HowToPlayController {
                 @Override
                 public void handle(ActionEvent actionEvent) {
 
+                    okButton.setDisable(false);
+
                     FadeTransition fadeInButton = new FadeTransition(Duration.seconds(1), okButton);
                     fadeInButton.setFromValue(0);
                     fadeInButton.setToValue(1);
@@ -59,7 +61,6 @@ public class HowToPlayController {
 
                     ParallelTransition showAndPulse = new ParallelTransition(fadeInButton, pulse);
                     showAndPulse.play();
-
                 }
             });
         });

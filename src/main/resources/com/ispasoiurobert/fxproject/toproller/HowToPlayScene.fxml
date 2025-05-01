@@ -24,7 +24,7 @@
             <Font name="Consolas Bold" size="26.0" />
          </font>
       </Text>
-      <Button fx:id="okButton" layoutX="484.0" layoutY="528.0" mnemonicParsing="false" onAction="#clickOkButton" opacity="0.0" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #35b61c;" text="OK" textFill="#ffff11">
+      <Button fx:id="okButton" disable="true" layoutX="484.0" layoutY="528.0" mnemonicParsing="false" onAction="#clickOkButton" opacity="0.0" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #35b61c;" text="OK" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="19.0" />
          </font>
@@ -32,9 +32,9 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
-            <DropShadow height="51.79" radius="26.4925" width="56.18">
+            <DropShadow height="53.99" radius="27.0425" width="56.18">
                <color>
-                  <Color red="1.0" green="1.0" blue="0.06666667014360428" />
+                  <Color red="1.0" green="1.0" blue="1.0" />
                </color>
             </DropShadow>
          </effect>

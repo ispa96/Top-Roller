@@ -23,7 +23,7 @@
             <Font name="Consolas Bold" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="howToPlayButton" layoutX="205.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickHowToPlayButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="How to Play">
+      <Button fx:id="howToPlayButton" disable="true" layoutX="205.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickHowToPlayButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="How to Play">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
@@ -34,7 +34,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="startGameButton" layoutX="510.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Start Game">
+      <Button fx:id="startGameButton" disable="true" layoutX="510.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Start Game">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
@@ -45,7 +45,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="settingsButton" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings">
+      <Button fx:id="settingsButton" disable="true" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
