@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
@@ -66,5 +68,35 @@
                </color></DropShadow>
          </effect>
       </Button>
+      <ImageView fx:id="die1ImageView" fitHeight="76.0" fitWidth="141.0" layoutX="268.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="die2ImageView" fitHeight="76.0" fitWidth="85.0" layoutX="364.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="die3ImageView" fitHeight="76.0" fitWidth="85.0" layoutX="461.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="die4ImageView" fitHeight="76.0" fitWidth="85.0" layoutX="558.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="die5ImageView" fitHeight="76.0" fitWidth="84.0" layoutX="660.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="die6ImageView" fitHeight="76.0" fitWidth="85.0" layoutX="758.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/die6.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

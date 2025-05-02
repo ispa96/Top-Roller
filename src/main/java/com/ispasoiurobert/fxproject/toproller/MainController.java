@@ -6,8 +6,14 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainController {
 
@@ -17,9 +23,39 @@ public class MainController {
     private Label infoLabel;
     @FXML
     private Button startGameButton, howToPlayButton, settingsButton;
+    @FXML
+    private ImageView die1ImageView, die2ImageView, die3ImageView, die4ImageView, die5ImageView, die6ImageView;
 
     @FXML
     public void initialize() {
+
+        final ArrayList<ImageView> imageViews = new ArrayList<>(Arrays.asList(
+                die1ImageView, die2ImageView, die3ImageView,
+                die4ImageView, die5ImageView, die6ImageView));
+
+        double delay = 2.0;
+
+        for (ImageView imageView : imageViews) {
+            FadeTransition fadeIn = new FadeTransition(Duration.seconds(1), imageView);
+            fadeIn.setFromValue(0);
+            fadeIn.setToValue(1);
+            fadeIn.setCycleCount(Animation.INDEFINITE);
+
+            ScaleTransition pulse = new ScaleTransition(Duration.seconds(1), imageView);
+            pulse.setFromX(1);
+            pulse.setFromY(1);
+            pulse.setToX(1.1);
+            pulse.setToY(1.1);
+            pulse.setCycleCount(Animation.INDEFINITE);
+
+            ParallelTransition showAndPulse = new ParallelTransition(fadeIn, pulse);
+            showAndPulse.setDelay(Duration.seconds(delay));
+            showAndPulse.play();
+
+            delay += 0.1;
+        }
+
+
         RotateTransition rotateTransition = new RotateTransition();
         rotateTransition.setNode(welcomeLabel);
         rotateTransition.setDuration(Duration.seconds(1));
