@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="630.0" prefWidth="1134.0" style="-fx-background-color: #35b61c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ispasoiurobert.fxproject.toproller.ChoosePlayersUsernamesController">
    <children>
-      <Label layoutX="278.0" layoutY="79.0" text="Choose Players' Usernames" textFill="WHITE">
+      <Label fx:id="choosePlayersUsernamesLabel" layoutX="278.0" layoutY="79.0" text="Choose Players' Usernames" textFill="WHITE">
          <font>
             <Font name="Consolas Bold" size="42.0" />
          </font>
@@ -20,12 +20,12 @@
             <Glow level="0.57" />
          </effect>
       </Label>
-      <Label layoutX="110.0" layoutY="297.0" text="Player1 Username" textFill="#ffff11">
+      <Label fx:id="player1UsernameLabel" layoutX="110.0" layoutY="297.0" text="Player1 Username" textFill="#ffff11">
          <font>
             <Font name="Consolas Bold Italic" size="31.0" />
          </font>
       </Label>
-      <Label layoutX="739.0" layoutY="297.0" text="Player2 Username" textFill="#ffff11">
+      <Label fx:id="player2UsernameLabel" layoutX="739.0" layoutY="297.0" text="Player2 Username" textFill="#ffff11">
          <font>
             <Font name="Consolas Bold Italic" size="31.0" />
          </font>
