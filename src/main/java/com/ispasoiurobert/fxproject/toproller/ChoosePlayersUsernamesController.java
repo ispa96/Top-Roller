@@ -65,4 +65,9 @@ public class ChoosePlayersUsernamesController {
     public void clickBackButton(ActionEvent event) {
         Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MainScene.fxml", null, null);
     }
+
+    public void ckickPlayButton(ActionEvent event) {
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", player1UsernameTextField.getText(), player2UsernameTextField.getText());
+    }
+
 }
