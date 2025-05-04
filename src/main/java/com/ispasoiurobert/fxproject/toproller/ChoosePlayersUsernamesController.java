@@ -63,11 +63,11 @@ public class ChoosePlayersUsernamesController {
     }
 
     public void clickBackButton(ActionEvent event) {
-        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MainScene.fxml", null, null);
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MainScene.fxml", null, null, null);
     }
 
     public void ckickPlayButton(ActionEvent event) {
-        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", player1UsernameTextField.getText(), player2UsernameTextField.getText());
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", "setPlayers", player1UsernameTextField.getText(), player2UsernameTextField.getText());
     }
 
 }

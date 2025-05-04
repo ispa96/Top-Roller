@@ -125,7 +125,7 @@ public class GameOnController {
     public void clickNextPlayerButton(ActionEvent event) {
 
         if(nextPlayerButton.getText().equals("Match Results")) {
-            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", null, null);
+            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", null, null, null);
         }
 
         nextPlayerButton.setText("Match Results");

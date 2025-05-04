@@ -68,6 +68,6 @@ public class HowToPlayController {
     }
 
     public void clickOkButton(ActionEvent event) {
-        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MainScene.fxml", null, null);
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MainScene.fxml", null, null, null);
     }
 }
