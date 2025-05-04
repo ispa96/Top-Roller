@@ -35,7 +35,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="nextPlayerButton" disable="true" layoutX="441.0" layoutY="485.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="253.0" style="-fx-background-color: #35b61c;" text="Next Player" textFill="WHITE">
+      <Button fx:id="nextPlayerButton" disable="true" layoutX="442.0" layoutY="484.0" mnemonicParsing="false" onAction="#clickNextPlayerButton" prefHeight="49.0" prefWidth="253.0" style="-fx-background-color: #35b61c;" text="Next Player" textFill="WHITE">
          <effect>
             <DropShadow height="53.24" radius="46.6375" width="135.31">
                <color>
@@ -52,5 +52,10 @@
       </Button>
       <ImageView fx:id="firstDieImageView" fitHeight="150.0" fitWidth="200.0" layoutX="253.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="secondDieImageView" fitHeight="150.0" fitWidth="200.0" layoutX="682.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="playersScore" alignment="CENTER" layoutX="1.0" layoutY="163.0" prefHeight="23.0" prefWidth="1135.0" text="You rolled " textFill="#ffff11">
+         <font>
+            <Font name="Consolas Bold Italic" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

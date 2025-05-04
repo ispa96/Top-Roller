@@ -4,6 +4,7 @@ import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,6 +17,8 @@ public class GameOnController {
     @FXML
     private Label playersTurnLabel;
     @FXML
+    private Label playersScore;
+    @FXML
     private Button rollButton;
     @FXML
     private Button nextPlayerButton;
@@ -26,6 +29,11 @@ public class GameOnController {
 
     private String player1Username;
     private String player2Username;
+
+    private int player1Score = 0;
+    private int player2Score = 0;
+
+    private int score = 0;
 
     private boolean playersWereSet = false;
 
@@ -46,6 +54,7 @@ public class GameOnController {
         }
 
         nextPlayerButton.setOpacity(0);
+        playersScore.setOpacity(0);
     }
 
     public void clickRollButton(ActionEvent event) {
@@ -72,6 +81,7 @@ public class GameOnController {
 
     public void DieComingAnimation(ImageView imageView, int dieCounter) {
         int rolledValue = (int)(Math.random() * 6) + 1;
+        score += rolledValue;
 
         String imagePath = "/images/die" + rolledValue + ".png";
         Image diceImage = new Image(getClass().getResourceAsStream(imagePath));
@@ -90,5 +100,46 @@ public class GameOnController {
 
         ParallelTransition transition = new ParallelTransition(translateTransition, fadeTransition);
         transition.play();
+
+        transition.setOnFinished(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent actionEvent) {
+
+                if(dieCounter == 2) {
+                    if(player1Score != 0) {
+                        player2Score = score;
+                    }
+                    else player1Score = score;
+                }
+
+                playersScore.setText("You rolled " + score + "!");
+                FadeTransition showScoreTransition = new FadeTransition(Duration.seconds(1), playersScore);
+                showScoreTransition.setFromValue(0);
+                showScoreTransition.setToValue(1);
+                showScoreTransition.play();
+            }
+        });
+    }
+
+    public void clickNextPlayerButton(ActionEvent event) {
+
+        if(nextPlayerButton.getText().equals("Match Results")) {
+            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", null, null);
+        }
+
+        nextPlayerButton.setText("Match Results");
+
+        nextPlayerButton.setOpacity(0);
+        playersTurnLabel.setText(player2Username.toUpperCase() + "'s turn");
+        playersScore.setOpacity(0);
+        score = 0;
+        firstDieImageView.setOpacity(0);
+        secondDieImageView.setOpacity(0);
+        rollButton.setDisable(false);
+        rollButton.setOpacity(1);
+
+        /*System.out.println("Player1 score: " + player1Score);
+        System.out.println("Player2 score: " + player2Score);*/
     }
 }
