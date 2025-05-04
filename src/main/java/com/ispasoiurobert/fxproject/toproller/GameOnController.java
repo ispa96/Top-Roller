@@ -67,12 +67,6 @@ public class GameOnController {
         fadeOutRollButton.setOnFinished(actionEvent -> {
             DieComingAnimation(firstDieImageView, 1);
             DieComingAnimation(secondDieImageView, 2);
-
-            nextPlayerButton.setDisable(false);
-            FadeTransition showNextPlayerButton = new FadeTransition(Duration.seconds(1), nextPlayerButton);
-            showNextPlayerButton.setFromValue(0);
-            showNextPlayerButton.setToValue(1);
-            showNextPlayerButton.play();
         });
 
         fadeOutRollButton.play();
@@ -88,10 +82,12 @@ public class GameOnController {
         imageView.setImage(diceImage);
 
         TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(1), imageView);
+
         if (dieCounter == 1)
             translateTransition.setFromX(-700);
         else
             translateTransition.setFromX(700);
+
         translateTransition.setToX(0);
 
         FadeTransition fadeTransition = new FadeTransition(Duration.seconds(1), imageView);
@@ -118,6 +114,12 @@ public class GameOnController {
                 showScoreTransition.setFromValue(0);
                 showScoreTransition.setToValue(1);
                 showScoreTransition.play();
+
+                nextPlayerButton.setDisable(false);
+                FadeTransition showNextPlayerButton = new FadeTransition(Duration.seconds(1), nextPlayerButton);
+                showNextPlayerButton.setFromValue(0);
+                showNextPlayerButton.setToValue(1);
+                showNextPlayerButton.play();
             }
         });
     }
@@ -125,12 +127,13 @@ public class GameOnController {
     public void clickNextPlayerButton(ActionEvent event) {
 
         if(nextPlayerButton.getText().equals("Match Results")) {
-            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", null, null, null);
+            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", "setScores", String.valueOf(player1Score), String.valueOf(player2Score));
         }
 
         nextPlayerButton.setText("Match Results");
 
         nextPlayerButton.setOpacity(0);
+        nextPlayerButton.setDisable(true);
         playersTurnLabel.setText(player2Username.toUpperCase() + "'s turn");
         playersScore.setOpacity(0);
         score = 0;
