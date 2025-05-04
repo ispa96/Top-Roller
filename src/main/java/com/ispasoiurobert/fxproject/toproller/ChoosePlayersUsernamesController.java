@@ -67,7 +67,7 @@ public class ChoosePlayersUsernamesController {
     }
 
     public void ckickPlayButton(ActionEvent event) {
-        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", "setPlayers", player1UsernameTextField.getText(), player2UsernameTextField.getText());
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", "setPlayers", player1UsernameTextField.getText().trim(), player2UsernameTextField.getText().trim());
     }
 
 }
