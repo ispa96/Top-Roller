@@ -115,11 +115,18 @@ public class GameOnController {
                 showScoreTransition.setToValue(1);
                 showScoreTransition.play();
 
-                nextPlayerButton.setDisable(false);
                 FadeTransition showNextPlayerButton = new FadeTransition(Duration.seconds(1), nextPlayerButton);
                 showNextPlayerButton.setFromValue(0);
                 showNextPlayerButton.setToValue(1);
                 showNextPlayerButton.play();
+
+                showNextPlayerButton.setOnFinished(new EventHandler<ActionEvent>() {
+
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        nextPlayerButton.setDisable(false);
+                    }
+                });
             }
         });
     }
