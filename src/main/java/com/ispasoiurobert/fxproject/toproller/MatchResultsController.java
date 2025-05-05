@@ -24,7 +24,11 @@ public class MatchResultsController {
 
     private int firstPlayerScore = 0;
     private int secondPlayerScore = 0;
+
     private boolean scoresWereSet = false;
+
+    private String firstPlayerUsername;
+    private String secondPlayerUsername;
 
     @FXML
     public void initialize() {
@@ -35,23 +39,29 @@ public class MatchResultsController {
         playAgainButton.setOpacity(0);
 
         if(scoresWereSet && firstPlayerScoreLabel != null && secondPlayerScoreLabel != null) {
-            firstPlayerScoreLabel.setText(firstPlayerScoreLabel.getText() + firstPlayerScore);
-            secondPlayerScoreLabel.setText(secondPlayerScoreLabel.getText() + secondPlayerScore);
+            firstPlayerScoreLabel.setText(firstPlayerUsername + " rolled " + firstPlayerScore);
+            secondPlayerScoreLabel.setText(secondPlayerUsername + " rolled " + secondPlayerScore);
         }
 
         labelAnimation(firstPlayerScoreLabel, 1);
         labelAnimation(secondPlayerScoreLabel, 2);
     }
 
-    public void setScores(String firstPlayerScore, String secondPlayerScore) {
+    public void setScores(String firstPlayerUsernameAndScore, String secondPlayerUsernameAndScore) {
 
-        this.firstPlayerScore = Integer.parseInt(firstPlayerScore);
-        this.secondPlayerScore = Integer.parseInt(secondPlayerScore);
+        String[] firstPlayerParts = firstPlayerUsernameAndScore.split(" ");
+        String[] secondPlayerParts = secondPlayerUsernameAndScore.split(" ");
+
+        firstPlayerUsername = firstPlayerParts[0];
+        secondPlayerUsername = secondPlayerParts[0];
+
+        this.firstPlayerScore = Integer.parseInt(firstPlayerParts[1]);
+        this.secondPlayerScore = Integer.parseInt(secondPlayerParts[1]);
         this.scoresWereSet = true;
 
         if(firstPlayerScoreLabel != null && secondPlayerScoreLabel != null) {
-            firstPlayerScoreLabel.setText(firstPlayerScoreLabel.getText() + firstPlayerScore);
-            secondPlayerScoreLabel.setText(secondPlayerScoreLabel.getText() + secondPlayerScore);
+            firstPlayerScoreLabel.setText(firstPlayerUsername + " rolled " + firstPlayerScore);
+            secondPlayerScoreLabel.setText(secondPlayerUsername + " rolled " + secondPlayerScore);
         }
 
         labelAnimation(firstPlayerScoreLabel, 1);
@@ -64,8 +74,8 @@ public class MatchResultsController {
         translateTransition1.setDuration(Duration.seconds(1));
 
         if(counter == 1)
-            translateTransition1.setFromX(-500);
-        else translateTransition1.setFromX(500);
+            translateTransition1.setFromX(-700);
+        else translateTransition1.setFromX(1000);
 
         translateTransition1.setToX(0);
         translateTransition1.play();
@@ -76,9 +86,9 @@ public class MatchResultsController {
             public void handle(ActionEvent actionEvent) {
 
                 if(firstPlayerScore > secondPlayerScore)
-                    displayWinnerLabel.setText("First Player Wins!");
+                    displayWinnerLabel.setText(firstPlayerUsername.toUpperCase() + " Wins!");
                 else if(secondPlayerScore > firstPlayerScore)
-                    displayWinnerLabel.setText("Second Player Wins!");
+                    displayWinnerLabel.setText(secondPlayerUsername.toUpperCase() + " Wins!");
                 else displayWinnerLabel.setText("TIE!");
 
                 displayWinnerLabel.setOpacity(1);

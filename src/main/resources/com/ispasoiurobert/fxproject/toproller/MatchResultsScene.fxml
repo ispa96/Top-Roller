@@ -15,7 +15,7 @@
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font></Label>
-      <Label fx:id="secondPlayerScoreLabel" alignment="CENTER" layoutX="625.0" layoutY="84.0" text="Second player rolled " textFill="#ffff11">
+      <Label fx:id="secondPlayerScoreLabel" alignment="CENTER" layoutX="645.0" layoutY="84.0" text="Second player rolled " textFill="#ffff11">
          <font>
             <Font name="Consolas Bold" size="35.0" />
          </font></Label>

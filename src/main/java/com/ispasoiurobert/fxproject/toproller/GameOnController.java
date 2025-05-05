@@ -134,7 +134,10 @@ public class GameOnController {
     public void clickNextPlayerButton(ActionEvent event) {
 
         if(nextPlayerButton.getText().equals("Match Results")) {
-            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", "setScores", String.valueOf(player1Score), String.valueOf(player2Score));
+            String firstPlayerUsernameAndScore = player1Username + " " + player1Score;
+            String secondPlayerUsernameAndScore = player2Username + " " + player2Score;
+
+            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", "setScores", firstPlayerUsernameAndScore, secondPlayerUsernameAndScore);
         }
 
         nextPlayerButton.setText("Match Results");
