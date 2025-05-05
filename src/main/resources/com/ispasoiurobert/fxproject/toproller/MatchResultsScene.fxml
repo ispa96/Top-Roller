@@ -11,13 +11,13 @@
 
 <AnchorPane prefHeight="630.0" prefWidth="1134.0" style="-fx-background-color: #35b61c;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ispasoiurobert.fxproject.toproller.MatchResultsController">
    <children>
-      <Label fx:id="firstPlayerScoreLabel" alignment="CENTER" layoutX="26.0" layoutY="84.0" prefHeight="41.0" prefWidth="426.0" text="First player rolled " textFill="#ffff11">
+      <Label fx:id="firstPlayerScoreLabel" alignment="CENTER" layoutX="32.0" layoutY="78.0" prefHeight="41.0" prefWidth="519.0" text="First67890 player rolled " textFill="#ffff11">
          <font>
-            <Font name="Consolas Bold" size="35.0" />
+            <Font name="Consolas Bold" size="28.0" />
          </font></Label>
-      <Label fx:id="secondPlayerScoreLabel" alignment="CENTER" layoutX="645.0" layoutY="84.0" prefHeight="41.0" prefWidth="461.0" text="Second player rolled " textFill="#ffff11">
+      <Label fx:id="secondPlayerScoreLabel" alignment="CENTER" layoutX="581.0" layoutY="78.0" prefHeight="41.0" prefWidth="519.0" text="Second7890 player rolled " textFill="#ffff11">
          <font>
-            <Font name="Consolas Bold" size="35.0" />
+            <Font name="Consolas Bold" size="28.0" />
          </font></Label>
       <Label fx:id="displayWinnerLabel" alignment="CENTER" layoutY="291.0" prefHeight="49.0" prefWidth="1135.0" text="wins" textFill="WHITE">
          <font>

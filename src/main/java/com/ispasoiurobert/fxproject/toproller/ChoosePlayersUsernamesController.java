@@ -2,6 +2,8 @@ package com.ispasoiurobert.fxproject.toproller;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -25,12 +27,34 @@ public class ChoosePlayersUsernamesController {
     private Label player2UsernameLabel;
     @FXML
     private Label choosePlayersUsernamesLabel;
+    @FXML
+    private Label firstPlayerUsernameAlertLabel;
+    @FXML
+    private Label secondPlayerUsernameAlertLabel;
 
     @FXML
     public void initialize() {
 
-        player1UsernameTextField.textProperty().addListener((observable, oldValue, newValue) -> checkTextFields());
-        player2UsernameTextField.textProperty().addListener((observable, oldValue, newValue) -> checkTextFields());
+        firstPlayerUsernameAlertLabel.setOpacity(0);
+        secondPlayerUsernameAlertLabel.setOpacity(0);
+
+        player1UsernameTextField.textProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal.length() > 10) {
+                firstPlayerUsernameAlertLabel.setOpacity(1);
+            } else {
+                firstPlayerUsernameAlertLabel.setOpacity(0);
+            }
+            checkTextFields();
+        });
+
+        player2UsernameTextField.textProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal.length() > 10) {
+                secondPlayerUsernameAlertLabel.setOpacity(1);
+            } else {
+                secondPlayerUsernameAlertLabel.setOpacity(0);
+            }
+            checkTextFields();
+        });
 
         TranslateTransition translateTransition1 = new TranslateTransition();
         translateTransition1.setNode(player1UsernameLabel);
@@ -59,7 +83,7 @@ public class ChoosePlayersUsernamesController {
         String text1 = player1UsernameTextField.getText();
         String text2 = player2UsernameTextField.getText();
 
-        playButton.setDisable(text1.isEmpty() || text2.isEmpty() || text1.equals(text2));
+        playButton.setDisable(text1.isEmpty() || text2.isEmpty() || text1.toLowerCase().equals(text2.toLowerCase()) || text1.length() > 10 || text2.length() > 10);
     }
 
     public void clickBackButton(ActionEvent event) {
