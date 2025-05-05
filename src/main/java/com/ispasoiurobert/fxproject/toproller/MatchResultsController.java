@@ -43,8 +43,8 @@ public class MatchResultsController {
             secondPlayerScoreLabel.setText(secondPlayerUsername + " rolled " + secondPlayerScore);
         }
 
-        labelAnimation(firstPlayerScoreLabel, 1);
-        labelAnimation(secondPlayerScoreLabel, 2);
+        labelAnimation(firstPlayerScoreLabel);
+        labelAnimation(secondPlayerScoreLabel);
     }
 
     public void setScores(String firstPlayerUsernameAndScore, String secondPlayerUsernameAndScore) {
@@ -64,20 +64,18 @@ public class MatchResultsController {
             secondPlayerScoreLabel.setText(secondPlayerUsername + " rolled " + secondPlayerScore);
         }
 
-        labelAnimation(firstPlayerScoreLabel, 1);
-        labelAnimation(secondPlayerScoreLabel, 2);
+        labelAnimation(firstPlayerScoreLabel);
+        labelAnimation(secondPlayerScoreLabel);
     }
 
-    public void labelAnimation(Label label, int counter) {
+    public void labelAnimation(Label label) {
         TranslateTransition translateTransition1 = new TranslateTransition();
         translateTransition1.setNode(label);
         translateTransition1.setDuration(Duration.seconds(1));
 
-        if(counter == 1)
-            translateTransition1.setFromX(-700);
-        else translateTransition1.setFromX(1000);
+        translateTransition1.setFromY(-200);
 
-        translateTransition1.setToX(0);
+        translateTransition1.setToY(0);
         translateTransition1.play();
 
         translateTransition1.setOnFinished(new EventHandler<ActionEvent>() {
