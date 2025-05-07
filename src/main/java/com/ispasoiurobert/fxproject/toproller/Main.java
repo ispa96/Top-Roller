@@ -12,6 +12,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        playAudio();
+
         stage.setResizable(false);
         stage.setHeight(630);
         stage.setWidth(1134);
@@ -25,5 +27,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public void playAudio() {
+        String path = "/audios/background.mp3";
     }
 }

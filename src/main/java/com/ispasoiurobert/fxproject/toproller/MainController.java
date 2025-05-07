@@ -132,4 +132,8 @@ public class MainController {
     public void clickStartGameButton(ActionEvent event) {
         Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/ChoosePlayersUsernamesScene.fxml", null, null, null);
     }
+
+    public void clickSettingsButton(ActionEvent event) {
+        Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/SettingsScene.fxml", null, null, null);
+    }
 }

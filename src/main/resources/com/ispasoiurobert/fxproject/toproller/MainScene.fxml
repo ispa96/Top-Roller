@@ -54,7 +54,7 @@
                </color></DropShadow>
          </effect>
       </Button>
-      <Button fx:id="settingsButton" disable="true" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings" textFill="WHITE">
+      <Button fx:id="settingsButton" disable="true" layoutX="820.0" layoutY="509.0" mnemonicParsing="false" onAction="#clickSettingsButton" opacity="0.0" style="-fx-background-color: #35b61c;" text="Settings" textFill="WHITE">
          <font>
             <Font name="Consolas Bold Italic" size="17.0" />
          </font>
