@@ -35,7 +35,9 @@ public class SettingsController {
             }
         });
 
-        offRadioButton.setSelected(true);
+        if(!MediaPlayerSingleton.isPlaying)
+            offRadioButton.setSelected(true);
+        else onRadioButton.setSelected(true);
     }
 
     public void clickBackButton(ActionEvent event) {

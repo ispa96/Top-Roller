@@ -6,6 +6,7 @@ import javafx.scene.media.MediaPlayer;
 public class MediaPlayerSingleton {
 
     private static MediaPlayer mediaPlayer;
+    public static boolean isPlaying;
 
     private static final String PATH = "/audios/background1.mp3";
 
@@ -33,8 +34,10 @@ public class MediaPlayerSingleton {
 
         MediaPlayer player = getMediaPlayer();
 
-        if (player.getStatus() != MediaPlayer.Status.PLAYING)
+        if (player.getStatus() != MediaPlayer.Status.PLAYING) {
             player.play();
+            isPlaying = true;
+        }
     }
 
     public static void pause() {
@@ -43,6 +46,7 @@ public class MediaPlayerSingleton {
 
         if (player.getStatus() == MediaPlayer.Status.PLAYING) {
             player.pause();
+            isPlaying = false;
         }
     }
 }
