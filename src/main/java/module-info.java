@@ -3,6 +3,7 @@ module com.ispasoiurobert.fxproject.toproller {
     requires javafx.fxml;
     requires java.net.http;
     requires java.desktop;
+    requires javafx.media;
 
 
     opens com.ispasoiurobert.fxproject.toproller to javafx.fxml;
