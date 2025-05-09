@@ -33,7 +33,7 @@ public class GameOnController {
     private int player1Score = 0;
     private int player2Score = 0;
 
-    private int score = 0;
+    private int rollScore = 0;
 
     private boolean playersWereSet = false;
 
@@ -75,7 +75,7 @@ public class GameOnController {
 
     public void DieComingAnimation(ImageView imageView, int dieCounter) {
         int rolledValue = (int)(Math.random() * 6) + 1;
-        score += rolledValue;
+        rollScore += rolledValue;
 
         String imagePath = "/images/die" + rolledValue + ".png";
         Image diceImage = new Image(getClass().getResourceAsStream(imagePath));
@@ -104,12 +104,16 @@ public class GameOnController {
 
                 if(dieCounter == 2) {
                     if(player1Score != 0) {
-                        player2Score = score;
+                        player2Score = rollScore;
                     }
-                    else player1Score = score;
+                    else player1Score = rollScore;
                 }
 
-                playersScore.setText("You rolled " + score + "!");
+                if(player1Score == player2Score && player1Score != 0) {
+                    nextPlayerButton.setText("Tie");
+                }
+
+                playersScore.setText("You rolled " + rollScore + "!");
                 FadeTransition showScoreTransition = new FadeTransition(Duration.seconds(1), playersScore);
                 showScoreTransition.setFromValue(0);
                 showScoreTransition.setToValue(1);
@@ -139,6 +143,9 @@ public class GameOnController {
 
             Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/MatchResultsScene.fxml", "setScores", firstPlayerUsernameAndScore, secondPlayerUsernameAndScore);
         }
+        else if(nextPlayerButton.getText().equals("Tie")) {
+            Utils.switchScenes(event, "/com/ispasoiurobert/fxproject/toproller/GameOnScene.fxml", "setPlayers", player1Username, player2Username);
+        }
 
         nextPlayerButton.setText("Match Results");
 
@@ -146,7 +153,7 @@ public class GameOnController {
         nextPlayerButton.setDisable(true);
         playersTurnLabel.setText(player2Username.toUpperCase() + "'s turn");
         playersScore.setOpacity(0);
-        score = 0;
+        rollScore = 0;
         firstDieImageView.setOpacity(0);
         secondDieImageView.setOpacity(0);
         rollButton.setDisable(false);
