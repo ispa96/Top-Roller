@@ -84,12 +84,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="firstPlayerUsernameAlertLabel" layoutX="116.0" layoutY="376.0" text="*Username must be at most 10 chars" textFill="#ff0101">
+      <Label fx:id="firstPlayerUsernameAlertLabel" alignment="CENTER" layoutX="116.0" layoutY="376.0" text="*Username must be at most 10 chars" textFill="#ff0101">
          <font>
             <Font name="Consolas Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="secondPlayerUsernameAlertLabel" layoutX="745.0" layoutY="376.0" text="*Username must be at most 10 chars" textFill="RED">
+      <Label fx:id="secondPlayerUsernameAlertLabel" alignment="CENTER" layoutX="745.0" layoutY="376.0" text="*Username must be at most 10 chars" textFill="RED">
          <font>
             <Font name="Consolas Bold Italic" size="14.0" />
          </font>

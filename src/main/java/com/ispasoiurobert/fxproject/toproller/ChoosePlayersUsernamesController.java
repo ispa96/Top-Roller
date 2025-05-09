@@ -2,8 +2,6 @@ package com.ispasoiurobert.fxproject.toproller;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -39,20 +37,31 @@ public class ChoosePlayersUsernamesController {
         secondPlayerUsernameAlertLabel.setOpacity(0);
 
         player1UsernameTextField.textProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal.length() > 10) {
+
+            if (newVal.contains(" ")) {
+                firstPlayerUsernameAlertLabel.setText("*Cannot use spaces");
+                firstPlayerUsernameAlertLabel.setOpacity(1);
+            } else if (newVal.length() > 10) {
+                firstPlayerUsernameAlertLabel.setText("*Username must be at most 10 chars");
                 firstPlayerUsernameAlertLabel.setOpacity(1);
             } else {
                 firstPlayerUsernameAlertLabel.setOpacity(0);
             }
+
             checkTextFields();
         });
 
         player2UsernameTextField.textProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal.length() > 10) {
+            if (newVal.contains(" ")) {
+                secondPlayerUsernameAlertLabel.setText("*Cannot use spaces");
+                secondPlayerUsernameAlertLabel.setOpacity(1);
+            } else if (newVal.length() > 10) {
+                secondPlayerUsernameAlertLabel.setText("*Username must be at most 10 chars");
                 secondPlayerUsernameAlertLabel.setOpacity(1);
             } else {
                 secondPlayerUsernameAlertLabel.setOpacity(0);
             }
+
             checkTextFields();
         });
 
@@ -83,7 +92,10 @@ public class ChoosePlayersUsernamesController {
         String text1 = player1UsernameTextField.getText();
         String text2 = player2UsernameTextField.getText();
 
-        playButton.setDisable(text1.isEmpty() || text2.isEmpty() || text1.toLowerCase().equals(text2.toLowerCase()) || text1.length() > 10 || text2.length() > 10);
+        boolean text1Spaces = text1.contains(" ");
+        boolean text2Spaces = text2.contains(" ");
+
+        playButton.setDisable(text1Spaces || text2Spaces || text1.isEmpty() || text2.isEmpty() || text1.toLowerCase().equals(text2.toLowerCase()) || text1.length() > 10 || text2.length() > 10);
     }
 
     public void clickBackButton(ActionEvent event) {
